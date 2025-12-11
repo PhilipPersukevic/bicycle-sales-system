@@ -1,129 +1,70 @@
-Bicycle Sales System
+# 🚴 Bicycle Sales System: Python OOP Project
 
-A Python OOP project using abstract classes, inheritance, the factory pattern, and CSV data storage.
+A comprehensive console-based bicycle sales management system developed using **Python's Object-Oriented Programming (OOP)** principles, abstract classes, inheritance, the Factory pattern, and CSV data storage.
 
-This project is a console-based bicycle sales management system designed to demonstrate solid OOP principles, modular code structure, and file handling.
-It is suitable for coursework, university projects, or practical learning of Python architecture.
+This project is designed to demonstrate **solid OOP principles**, a **modular code structure**, and **practical file handling**. It is an excellent example for coursework, university projects, or learning Python architecture.
 
-Project Structure
-project/
-│
-├── models/
-│   ├── bicycle.py
-│   ├── bicycle_types.py
-│   └── factory.py
-│
-├── sales/
-│   ├── sale.py
-│   └── sales_manager.py
-│
-├── main.py
-└── sales.csv    # Automatically created after first sale
+---
 
-Features
-Multiple Bicycle Types
+## ✨ Features
 
-The system supports creating bicycles of various categories:
+### Multiple Bicycle Types
 
-Downhill
+The system supports creating bicycles across various categories, all deriving from the abstract base class `Bicycle`:
 
-Ebike
+* **Downhill**
+* **Ebike**
+* **XC**
+* **Enduro**
+* **Trail**
+* **Gravel**
 
-XC
+### Add Sales
 
-Enduro
+The user can input detailed specifications for each bicycle sold:
 
-Trail
+* **Year**
+* **Model**
+* **Color**
+* **Frame size**
+* **Wheel size**
+* **Number of gears**
+* **Price**
+* **Quantity**
 
-Gravel
+Every completed sale is persistently saved to the `sales.csv` file.
 
-Each type derives from the abstract base class Bicycle.
+### Calculate Total Sales Revenue
 
-Add Sales
+The program includes functionality to read the sales data from the CSV file, calculate, and display the **total sales revenue**.
 
-The user can input all bicycle details:
+### Robust Input Validation
 
-year
+User input is strictly validated to ensure data integrity:
 
-model
+* **Valid bicycle type** selection.
+* **Year** not exceeding the current year (e.g., 2025).
+* **Color** must not contain digits.
+* Validation for **frame and wheel sizes**.
+* **Gears** must match allowed values.
+* **Price** and **Quantity** must be positive numbers.
 
-color
+---
 
-frame size
+## 📂 Project Structure
 
-wheel size
+The project is organized into a modular structure:
 
-number of gears
+project/│├── models/│   ├── bicycle.py          # Abstract base class and common logic│   ├── bicycle_types.py    # Concrete bicycle type classes (Downhill, Ebike, etc.)│   └── factory.py          # Implementation of the Factory Pattern│├── sales/│   ├── sale.py             # Sale class for individual transactions│   └── sales_manager.py    # Logic for managing sales and revenue calculation│├── main.py                 # Entry point and console interface└── sales.csv               # Sales data store (automatically created after first sale)
+---
 
-price
+## ⚙️ How to Run
 
-quantity
+1.  **Install Python 3.9+** on your system.
+2.  **Download** the entire project repository.
+3.  Navigate to the project directory in your terminal.
+4.  Run the main file:
 
-Every sale is saved to sales.csv.
-
-Calculate Total Sales Revenue
-
-The program reads the CSV file, calculates and displays total revenue.
-
-Input Validation
-
-User input is validated to ensure correctness:
-
-valid bicycle type
-
-year not exceeding 2025
-
-color must not contain digits
-
-valid frame and wheel sizes
-
-gears must match allowed values
-
-price and quantity must be positive numbers
-
-How to Run
-
-Install Python 3.9+
-
-Download the project
-
-Run:
-
+```bash
 python main.py
-
-OOP Concepts Used
-OOP Concept	Implementation Location
-Abstraction	Bicycle (abstract base class)
-Inheritance	All concrete bicycle classes
-Polymorphism	Overridden display_info() methods
-Encapsulation	Private attributes (_year, _price)
-Factory Pattern	BicycleFactory
-Modular Structure	Code split into multiple modules
-
-Example CSV Output
-
-sales.csv after adding some sales:
-
-Type,Year,Model,Color,Frame size,Wheel size,Number of gears,Price,Quantity,Total
-Enduro,2023,Rallon,Blue,l,29,12,3500,2,7000
-Ebike,2024,Levo,Red,m,29,12,8900,1,8900
-
-Technologies Used
-
-Python 3
-
-ABC (Abstract Base Class)
-
-CSV Module
-
-Factory Pattern
-
-Modular Code Architecture
-
-Author
-
-Created by Philipp — Electronics Faculty, Vilnius Tech.
-
-License
-
-Open for educational and academic use.
+🧱 OOP Concepts UsedOOP ConceptImplementation LocationDescriptionAbstractionBicycleAbstract base class defining the interface for all bicycles.InheritanceAll concrete bicycle classesConcrete classes (e.g., Downhill, Ebike) inherit from Bicycle.PolymorphismOverridden display_info() methodsDifferent bicycle types implement their own specific display logic.EncapsulationPrivate attributesUse of private attributes (e.g., _year, _price) to control data access.Factory PatternBicycleFactoryDecouples the client code from the concrete bicycle class creation.Modular StructureCode split into multiple modulesEnhances maintainability and readability.💻 Technologies UsedPython 3ABC (Abstract Base Class) moduleCSV ModuleFactory PatternModular Code Architecture📊 Example CSV OutputThe sales.csv file, after adding some sales, looks like this:TypeYearModelColorFrame sizeWheel sizeNumber of gearsPriceQuantityTotalEnduro2023RallonBluel2912350027000Ebike2024LevoRedm2912890018900👤 AuthorCreated by Philipp — Electronics Faculty, Vilnius Tech.📄 LicenseThis project is Open for educational and academic use.
