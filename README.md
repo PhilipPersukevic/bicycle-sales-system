@@ -4,6 +4,10 @@ This is a console-based Python project designed for managing bicycle sales and t
 
 ## Features
 
+## Design Patterns Used
+- Factory Pattern for creating bicycle objects dynamically
+- Abstract Base Class for enforcing a common bicycle interface
+
 * **Bicycle Definition:** Supports multiple bicycle types (Downhill, Ebike, Enduro, Trail, XC, Gravel) with attributes like year, model, color, frame size, wheel size, number of gears, and price.
 * **Factory Pattern:** Dynamically creates bicycle objects based on type.
 * **Sales Management:** Records sales with quantity and calculates total price.
@@ -131,3 +135,12 @@ Manages sales and persists them to CSV.
 | `add_sale(sale)` | Adds a sale and saves it to `sales.csv`. |
 | `save_sales()` | Writes all sales to the CSV file. |
 | `calculate_total_sales_from_file()` | Reads `sales.csv` and calculates total sales. |
+
+## What this project demonstrates
+- Object-Oriented Design with abstraction and inheritance
+- Use of design patterns (Factory Pattern)
+- File-based persistence using CSV
+- Business logic modeling (sales and revenue calculation)
+
+## Tech Stack
+- Python 3
